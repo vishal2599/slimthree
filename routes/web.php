@@ -38,7 +38,7 @@ $app->post('/contact/confirm', function ($request, $response) {
 $app->group('/topics', function () {
     // $this->get('', '\Vishal\Controllers\TopicController:index');
 
-    $this->get('', TopicController::class . ':index');
+    $this->get('', TopicController::class . ':modelIndex');
 
     $this->get('/{id}', TopicController::class . ':show')->setName('topics.show');
 

@@ -3,9 +3,14 @@
 {% block content %}
 
 {% for topic in topics %}
+{# <div class="topic">
+    <h3><a href="{{path_for('topics.show', {'id' : topic.id})}}">{{topic.name}}</a></h3>
+    <p>{{topic.description}}</p>
+</div> #}
 
-<h3><a href="{{path_for('topics.show', {'id' : topic.id})}}">{{topic.name}}</a></h3>
-<p>{{topic.description}}</p>
-
+<div class="topic">
+    <h3><a href="{{path_for('topics.show', {'id' : topic.id})}}">{{topic.getTitle()}}</a></h3>
+    <p>{{topic.description}}</p>
+</div>
 {% endfor %}
 {% endblock %}
