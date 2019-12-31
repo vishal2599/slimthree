@@ -1,0 +1,21 @@
+{% extends 'layouts/app.twig' %}
+
+{% block title %} Profile for - {{ data.name }} {% endblock %}
+
+{% block content %}
+
+{% if not data %}
+
+<p>No user found.</p>
+
+{% else %}
+
+<h1>{{ data.username }}</h1>
+
+<ul>
+    <li>{{ data.email }}</li>
+    <li>{{ data.name }}</li>
+</ul>
+{% endif %}
+
+{% endblock %}
