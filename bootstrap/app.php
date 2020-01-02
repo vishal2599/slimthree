@@ -25,4 +25,9 @@ $container['view'] = function ($container) {
     return $view;
 };
 
+$middleware = function ($request, $response, $next) {
+    $response->getBody()->write('Before');
+    return $next($request, $response);
+};
+
 require __DIR__ . '/../routes/web.php';
