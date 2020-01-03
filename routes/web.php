@@ -4,6 +4,7 @@ use Vishal\Controllers\ExampleController;
 use Vishal\Models\User;
 use Vishal\Controllers\TopicController;
 use Vishal\Controllers\UserController;
+use Vishal\Middleware\IpFilter;
 use Vishal\Middleware\RedirectIfUnauthenticated;
 
 
@@ -15,6 +16,9 @@ $token = function ($request, $response, $next) {
     $request = $request->withAttribute('token', 'abc123');
     return $next($request, $response);
 };
+
+
+// $app->add(new IpFilter($container['db']));
 
 $app->get('/', function ($request, $response) {
     // $users = $this->db->query('SELECT * FROM users')->fetchAll(PDO::FETCH_OBJ);

@@ -25,6 +25,13 @@ $container['view'] = function ($container) {
     return $view;
 };
 
+$container['notFoundHandler'] = function ($c) {
+    return new Vishal\Handlers\NotFoundHandler;
+    // return function ($request, $response) use ($c) {
+    // return $c->view->render($response, 'errors/404.twig')->withStatus(404);
+    // };
+};
+
 $middleware = function ($request, $response, $next) {
     $response->getBody()->write('Before');
     return $next($request, $response);

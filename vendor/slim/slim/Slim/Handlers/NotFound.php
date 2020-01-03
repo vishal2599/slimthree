@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Slim Framework (http://slimframework.com)
  *
@@ -6,6 +7,7 @@
  * @copyright Copyright (c) 2011-2016 Josh Lockhart
  * @license   https://github.com/slimphp/Slim/blob/3.x/LICENSE.md (MIT License)
  */
+
 namespace Slim\Handlers;
 
 use Psr\Http\Message\ServerRequestInterface;
@@ -55,8 +57,8 @@ class NotFound extends AbstractHandler
         $body->write($output);
 
         return $response->withStatus(404)
-                        ->withHeader('Content-Type', $contentType)
-                        ->withBody($body);
+            ->withHeader('Content-Type', $contentType)
+            ->withBody($body);
     }
 
     /**
@@ -88,7 +90,7 @@ class NotFound extends AbstractHandler
      */
     protected function renderHtmlNotFoundOutput(ServerRequestInterface $request)
     {
-        $homeUrl = (string)($request->getUri()->withPath('')->withQuery('')->withFragment(''));
+        $homeUrl = (string) ($request->getUri()->withPath('')->withQuery('')->withFragment(''));
         return <<<END
 <html>
     <head>
