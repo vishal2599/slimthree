@@ -26,7 +26,8 @@ $container['view'] = function ($container) {
 };
 
 $container['notFoundHandler'] = function ($c) {
-    return new Vishal\Handlers\NotFoundHandler;
+    return new Vishal\Handlers\NotFoundhandler($c['view']);
+    //return new Vishal\Handlers\NotFoundhandler;
     // return function ($request, $response) use ($c) {
     // return $c->view->render($response, 'errors/404.twig')->withStatus(404);
     // };
